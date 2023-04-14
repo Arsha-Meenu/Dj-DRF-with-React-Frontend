@@ -32,6 +32,7 @@ INSTALLED_APPS = [
 
     "crispy_forms",
     "crispy_bootstrap5",
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -96,6 +97,25 @@ DATABASES = {
     }
 
 }
+
+
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.github.GithubOAuth2',
+    'social_core.backends.linkedin.LinkedinOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_FACEBOOK_KEY = '3033528713609399'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'ddc23a1eb083a7ccf7ec2fba3f02929d'
+
+# SOCIAL_AUTH_GITHUB_KEY = ''
+# SOCIAL_AUTH_GITHUB_SECRET = ''
+#
+# SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = ''
+# SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = ''
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

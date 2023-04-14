@@ -28,5 +28,29 @@
     <input type="submit" value="Login" class="btn btn-success">
 
   </form>
+
+      <div class="row mt-4 ">
+      <div class="col">
+        <button class="btn btn-primary">
+        <a class="link-style" href="{% url 'social:begin' 'facebook' %}">Social Facebook</a>
+        </button>
+      </div>
+
+        <div class="col">
+        <button class="btn btn-danger">
+        <a class="link-style" href="{% url 'social:begin' 'github' %}">Social Github</a>
+        </button>
+      </div>
+
+        <div class="col">
+        <button class="btn btn-warning">
+        <a class="link-style" href="{% url 'social:begin' 'linkedin-outh2' %}">Social LinkedIn</a>
+        </button>
+      </div>
+
+
+      </div>
+
+
 </div>
 {% endblock %}
