@@ -43,7 +43,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
     "whitenoise.middleware.WhiteNoiseMiddleware",
+
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'Blog.urls'
@@ -59,6 +62,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -102,11 +108,12 @@ DATABASES = {
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.facebook.FacebookOAuth2',
-    'social_core.backends.github.GithubOAuth2',
     'social_core.backends.linkedin.LinkedinOAuth2',
+    'social_core.backends.github.GithubOAuth2',
 
     'django.contrib.auth.backends.ModelBackend',
 )
+
 
 SOCIAL_AUTH_FACEBOOK_KEY = '3033528713609399'
 SOCIAL_AUTH_FACEBOOK_SECRET = 'ddc23a1eb083a7ccf7ec2fba3f02929d'
@@ -114,8 +121,10 @@ SOCIAL_AUTH_FACEBOOK_SECRET = 'ddc23a1eb083a7ccf7ec2fba3f02929d'
 SOCIAL_AUTH_GITHUB_KEY = '4cb9dc55aeb00ba2662a'
 SOCIAL_AUTH_GITHUB_SECRET = 'fbd1346ef3dea0f8fae5f4dcb21453215bf25529'
 #
-SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '869ta4rn97sacc'
+SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY= '869ta4rn97sacc'
 SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'IT1LMXqA5VqHxEoU'
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

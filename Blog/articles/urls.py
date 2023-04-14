@@ -16,7 +16,7 @@ urlpatterns = [
     path('update-article/<slug:slug>/', article_update, name='update-article'),
     path('delete_article/<slug:slug>/', article_delete, name='delete-article'),
 
-    path('social_auth/', include('social_django.urls', namespace='social')),
+    path('social-auth/', include('social_django.urls', namespace='social')),
 
 
 
