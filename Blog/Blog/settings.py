@@ -21,6 +21,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'app.articles',
+    'app.users',
+    'app.questions',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -54,7 +56,7 @@ ROOT_URLCONF = 'Blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,34 +77,34 @@ WSGI_APPLICATION = 'Blog.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 #
 # DATABASES = {
-#
 #     'default': {
-#
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#
-#         'NAME': 'DjBlog',
-#
-#         'USER': 'postgres',
-#
-#         'PASSWORD': 'password',
-#
-#         'HOST': '127.0.0.1',
-#
-#         'PORT': '5432',
-#
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
-#
 # }
+
+
+DATABASES = {
+
+    'default': {
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'NAME': 'DjBlog',
+
+        'USER': 'postgres',
+
+        'PASSWORD': 'password',
+
+        'HOST': '127.0.0.1',
+
+        'PORT': '5432',
+
+    }
+
+}
 
 
 
@@ -124,7 +126,7 @@ SOCIAL_AUTH_GITHUB_SECRET = 'fbd1346ef3dea0f8fae5f4dcb21453215bf25529'
 SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY= '869ta4rn97sacc'
 SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'IT1LMXqA5VqHxEoU'
 
-
+AUTH_USER_MODEL = 'users.CustomUser'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

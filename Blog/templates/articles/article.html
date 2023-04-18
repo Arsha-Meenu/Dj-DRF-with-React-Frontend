@@ -1,5 +1,5 @@
 
-{% extends 'base.html' %}
+{% extends 'articles/base.html' %}
 
 {% block title %} Article Lists {% endblock %}
 
@@ -27,7 +27,7 @@
         {% endfor %}
 
 
-        {% include 'account/pagination.html'  with page=article_list %}
+        {% include 'articles/account/pagination.html'  with page=article_list %}
     </div>
 
 {% endblock %}
