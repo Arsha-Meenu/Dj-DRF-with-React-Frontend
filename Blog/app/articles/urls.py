@@ -1,5 +1,5 @@
 from django.urls import path,include
-from articles.views import article_list,article_details,user_login,register,article_form,article_update,article_delete
+from app.articles.views import article_list,article_details,user_login,register,article_form,article_update,article_delete
 from django.contrib.auth.views import LoginView,LogoutView,PasswordChangeView,PasswordChangeDoneView
 
 
