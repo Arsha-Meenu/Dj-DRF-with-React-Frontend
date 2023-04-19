@@ -20,9 +20,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'app.articles',
-    'app.users',
-    'app.questions',
+    'apps.articles',
+    'apps.users',
+    'apps.questions',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -158,7 +158,8 @@ USE_I18N = True
 
 USE_TZ = True
 
-LOGIN_REDIRECT_URL = 'article_list'
+
+LOGIN_REDIRECT_URL = 'question-list'
 LOGIN_URL ='user_login'
 LOGOUT_URL = 'user_logout'
 

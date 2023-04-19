@@ -27,10 +27,8 @@
 
             <div class="card-body">
                 <h5 class="card-title ">
-                    <a  href="" class="link-style" >{{question.title}}</a>
-                </h5>
-                <p class="card-text">{{question.body}}</p>
-
+                    <a  href="{% url 'question-details' question.slug %}" class="link-style" >{{question.title}}</a>
+                </h5><br>
                 <div class="card-footer">
                     <div class="row">
                         <div class="col col-md-auto ">
