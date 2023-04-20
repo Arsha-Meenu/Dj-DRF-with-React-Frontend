@@ -6,7 +6,7 @@ from .views import register,profile_change
 
 urlpatterns = [
     # path('login/', user_login, name='user_login'),
-    path('login/', LoginView.as_view(), name='user_login'),
+    path('', LoginView.as_view(), name='user_login'),
     path('logout/', LogoutView.as_view(), name='user_logout'),
     path('register/', register, name='register'),
     path('password-change/', PasswordChangeView.as_view(), name='password-change'),
