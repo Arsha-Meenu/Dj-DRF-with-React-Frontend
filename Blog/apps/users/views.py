@@ -1,8 +1,11 @@
-from django.shortcuts import render,HttpResponse,get_object_or_404
+from django.shortcuts import render,HttpResponse,get_object_or_404,redirect
 from apps.articles.forms import LoginForm,UserRegistrationForm
+from .forms import ProfileForm
 from django.contrib.auth import login,authenticate
 from apps.articles.models import Articles
 from apps.questions.models import Question
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 
 def register(request):
@@ -39,5 +42,17 @@ def register(request):
 #         form = LoginForm()
 #     return render(request,'registration/login.html',{'form':form})
 
+
+
+@login_required
+def profile_change(request):
+    if request.method == 'POST':
+        form = ProfileForm(request.POST,instance=request.user)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'Profile has been updated.')
+
+    form = ProfileForm(instance=request.user)
+    return render(request,'registration/profile.html',{'form':form})
 
 

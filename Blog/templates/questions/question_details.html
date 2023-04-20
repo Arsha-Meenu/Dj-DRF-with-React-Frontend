@@ -36,7 +36,12 @@
                     Answered  at: {{answer.created_at}}
                 </div>
             </div>
+         {% if request.user == answer.author %}
+            <a class="btn btn-outline-primary btn-sm mt-3" href="{% url 'answer-delete' answer.id %}">Delete</a>
+            <a class="btn btn-outline-success btn-sm mt-3" href="{% url 'answer-update' answer.id %}">Update</a>
+        {%  endif %}
         </div>
+
     </div>
     {% endfor %}
 
@@ -48,7 +53,7 @@
             <h5 class=" card-header">Add Answer</h5>
             <div class="card-body">
                 {% csrf_token %}
-                {{form | crispy}}
+                {{answer_form | crispy}}
             </div>
             <input type="submit" value="Add Answer" class="btn btn-primary m-2">
         </form>

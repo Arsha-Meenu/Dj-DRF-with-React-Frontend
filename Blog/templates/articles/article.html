@@ -4,7 +4,7 @@
 {% block title %} Article Lists {% endblock %}
 
 {% block style %}
-    <style>
+<style>
         .link-style{
             text-decoration:none;
             color:black;
@@ -20,14 +20,14 @@
 
 {% block body %}
 
-    <div class="container mt-4">
-        {% for article in article_list %}
-        <span class="badge rounded-pill bg-success">Author: {{article.author}} </span>
-        <h1><a class="link-style" href="{% url 'article_details'  article.slug %}">{{article.title}}</a></h1>
-        {% endfor %}
+<div class="container mt-4">
+    {% for article in article_list %}
+    <span class="badge rounded-pill bg-success">Author: {{article.author}} </span>
+    <h1><a class="link-style" href="{% url 'article_details'  article.slug %}">{{article.title}}</a></h1>
+    {% endfor %}
 
 
-        {% include 'articles/account/pagination.html'  with page=article_list %}
-    </div>
+    {% include 'articles/account/pagination.html'  with page=article_list %}
+</div>
 
 {% endblock %}

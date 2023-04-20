@@ -1,0 +1,40 @@
+{% extends 'registration/base.html' %}
+
+
+{% load crispy_forms_tags %}
+
+
+{% block title %}Change Account{% endblock %}
+
+
+{% block style %}
+<style>
+    .account-style {
+        width:500px;
+        margin:auto;
+
+              }
+
+
+</style>
+{% endblock %}
+
+
+{% block body %}
+{% include 'questions/navbar.html' %}
+
+<div class="container mt-4 account-style">
+  {% if messages %}
+  {% for msg in messages %}
+    <div class="alert alert-{{msg.level_tag}}" role="alert">{{msg.message}}</div>
+  {% endfor %}
+  {% endif %}
+    <h1>Change Account</h1>
+    <form action="" method="POST" novalidate>
+      {% csrf_token %}
+      {{form | crispy}}
+      <input type="hidden" value="{{next}}" name = "next">
+      <input type="submit" value="ChangeAccount" class="btn btn-success">
+    </form>
+</div>
+{% endblock %}
