@@ -159,7 +159,7 @@ USE_I18N = True
 USE_TZ = True
 
 
-LOGIN_REDIRECT_URL = 'question-list'
+LOGIN_REDIRECT_URL = 'profile-redirect'
 LOGIN_URL ='user_login'
 LOGOUT_URL = 'user_logout'
 

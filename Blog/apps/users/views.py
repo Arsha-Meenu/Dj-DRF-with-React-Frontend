@@ -56,3 +56,5 @@ def profile_change(request):
     return render(request,'registration/profile.html',{'form':form})
 
 
+def profile_redirect(request):
+    return render(request,'registration/profile_redirect.html')

@@ -29,7 +29,7 @@ def article_form(request):
         article_form = ArticleCreateForm(request.POST)
         if article_form.is_valid():
             article = article_form.save(commit=False)
-            article.author = request.user
+            article.article_author = request.user
             article.save()
             return redirect('article_list')
     else:

@@ -1,0 +1,43 @@
+
+{% extends 'registration/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Profile Redirect {% endblock %}
+
+
+{% block style %}
+  <style>
+    .login-style {
+        width:500px;
+        margin:auto;
+
+              }
+
+    .link-style{
+            text-decoration:none;
+            color:black
+    }
+
+  </style>
+{% endblock %}
+
+
+{% block body %}
+
+<div class="container mt-4 login-style">
+  <h1>Profile Redirect</h1>
+      <div class="row mt-4 ">
+          <div class="col">
+            <button class="btn btn-info">
+            <a class="link-style" href="{% url 'article_list' %}">Articles</a>
+            </button>
+          </div>
+            <div class="col">
+            <button class="btn btn-danger">
+            <a class="link-style" href="{% url 'question-list' %}">Questions</a>
+            </button>
+          </div>
+      </div>
+</div>
+{% endblock %}
